@@ -75,7 +75,7 @@ if __name__ == '__main__':
     parser.add_argument('--target_domain',
                         choices=['book', 'dvd', 'electronics', 'kitchen', 'imdb', 'sst',
                                  'ch', 'f', 'gw', 'os', 's', 'fiction', 'government',
-                                 'state', 'telephone', 'travel', 'sick', 'snli'],
+                                 'slate', 'telephone', 'travel', 'sick', 'snli'],
                         default='book')
     parser.add_argument('--fm', choices=['gaussian', 'sigmoid', 'none', 'shannon'], default='sigmoid')
     parser.add_argument('--lamb', type=float, default=1.0)
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     sa_domains = ['book', 'dvd', 'electronics', 'kitchen', 'imdb', 'sst']
     rumour_domains = ['ch', 'f', 'gw', 'os', 's']
-    nli_domains = ['fiction', 'government', 'state', 'telephone', 'travel', 'sick', 'snli']
+    nli_domains = ['fiction', 'government', 'slate', 'telephone', 'travel', 'sick', 'snli']
 
     device = torch.device('cuda:%s' % args.cuda if torch.cuda.is_available() else 'cpu')
     # device = torch.device('cpu')
@@ -398,3 +398,4 @@ if __name__ == '__main__':
 
     with open('results/scores/%s/FDG/fm_%s_scl_%s_%s/%s/%s.txt' % (task_name, args.fm, args.scl, args.model, domain_label, target_domain), 'a') as f:
         f.write('f1: %.4f\n' % best_F1)
+
