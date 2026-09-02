@@ -56,7 +56,7 @@ FDG consists of four components:
 
 - Experimental results on the cross datasets:
 
-![cross](src/cross_datasets.png)
+![cross](src/cross-dataset.png)
 
 # Running GenPromptCL
 
